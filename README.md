@@ -22,9 +22,9 @@ THE USER is:
 * [ ] Able to delete a tweet. 
 
 Optional Stories 
-* [] The user can see a list of the 20 latest top news stories, loaded dynamically from newsapi.
-* [] For each story, the user sees a headline, the source, a link to more, and an image.
-* [] The user can see the total number of stories currently shown.
+* [ ] The user can see a list of the 20 latest top news stories, loaded dynamically from newsapi.
+* [ ] For each story, the user sees a headline, the source, a link to more, and an image.
+* [ ] The user can see the total number of stories currently shown.
 
 The following **optional** features are implemented:
 * [ ] Download and upload the list of tweets using the myjson api, as shown in class.
