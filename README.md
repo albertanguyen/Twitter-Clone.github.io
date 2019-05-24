@@ -2,7 +2,7 @@
 
 Created with love by: <a href="https://github.com/albertanguyen">Anh Nguyen</a>, <a href="https://github.com/SteelHeart112">Harold</a>, <a href="https://github.com/huynhtehoa">Hoa Huynh</a> 
 
-View online at: 
+View online at: https://albertanguyen.github.io/Twitter-Clone.github.io/
 
 ## User Stories
 
@@ -42,6 +42,7 @@ Time spent: X hours spent in total.
 [//]: #  (Describe any challenges encountered while building the app.)
 
 ## Version 1.0.1
+Modified twitter template with our own logo (for fun!)
 
 ## Version 1.0.0
 Inherite the <a href="https://github.com/jvadillo/twitter-bootstrap">Twitter bootstrap Clone</a> from <a href="https://github.com/jvadillo">Jon</a>
