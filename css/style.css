@@ -7,11 +7,6 @@ a {
   color: #1da1f2;
 }
 
-@media screen and (min-width: 1236px) {
-  .container {
-    width: 1190px;
-  }
-}
 /* Top Navbar elements' styles */
 .navbar {
   background-color: #fff;
@@ -76,6 +71,12 @@ a {
 .navbar-user-dropdown {
   margin-right: 15px;
 }
+
+.nav-md-size .octicon {
+  font-size: 20px;
+  padding-right: 15px;
+}
+
 /* END: Top Navbar elements' styles */
 
 .profile-background {

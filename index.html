@@ -30,11 +30,11 @@
 
 <body>
     <!-- Fixed top navbar -->
-    <nav class="navbar navbar-expand navbar-light bg-light fixed-top d-flex">
+    <nav class="navbar navbar-expand navbar-light bg-light fixed-top">
         <div class="container">
 
             <!-- Nav Normal Size -->
-            <div class="mr-auto d-none d-none d-lg-block">
+            <div class="mr-auto d-none d-lg-block">
                 <!-- Navbar navigation links -->
                 <ul class="navbar-nav">
                     <li class="nav-item active">
@@ -53,7 +53,7 @@
                 </ul>
             </div>
             <!-- Nav Md Size -->
-            <div class="mr-auto nav-icon-small d-sm-inline d-md-block d-lg-none">
+            <div class="mr-auto d-block d-lg-none nav-md-size">
                 <!-- Navbar navigation links -->
                 <ul class="navbar-nav">
                     <li class="nav-item active d-inline">
@@ -72,7 +72,7 @@
                 </ul>
             </div>
             <div class="mx-auto">
-                <img src="img/twitter-logo.png" width="30px" height="25px">
+                <img src="img/twitter-logo.png" class="d-none d-md-block" width="30px" height="25px">
             </div>
             <!-- END: Navbar navigation links -->
             <!-- Navbar Search form -->
@@ -90,7 +90,7 @@
             </div>
             <!-- END: Navbar Search form -->
             <!-- Navbar User menu -->
-            <div class="dropdown navbar-user-dropdown">
+            <div class="dropdown navbar-user-dropdown d-none d-md-block">
                 <button class="btn btn-secondary dropdown-toggle btn-circle" type="button" id="dropdownMenuButton"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                 <div class="dropdown-menu mt-2" aria-labelledby="dropdownMenuButton">
@@ -105,7 +105,7 @@
             </div>
             <!-- END: Navbar User menu -->
             <!-- Navbar Tweet button -->
-            <button class="btn btn-search-bar">Tweet</button>
+            <button class="btn btn-search-bar d-block">Tweet</button>
         </div>
         </div>
         </div>
@@ -172,7 +172,7 @@
                         <h3 class="profile-fullname"><a>Royal Road<a></h3>
                         <h2 class="profile-element"><a>@royalroad</a></h2>
                         <a class="profile-element profile-website" hrerf=""><i
-                                class="octicon octicon-link"></i>&nbsp;albertanguyen.github.io/RoyalRoad.github.io</a>
+                                class="octicon octicon-link"></i> Visit Our Website</a>
                         <a class="profile-element profile-website" hrerf=""><i
                                 class="octicon octicon-location"></i>&nbsp;Landmark 101</a>
                         <h2 class="profile-element"><i class="octicon octicon-calendar"></i> Joined May 2019</h2>
