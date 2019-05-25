@@ -82,6 +82,7 @@ a {
 .profile-background {
   height: 320px;
   background-image: url("../img/cover-photo.jpg");
+  margin: 0;
 }
 
 /* Main avatar */
@@ -188,8 +189,6 @@ a {
 /* END: Left column*/
 
 /* Main column*/
-.main-content {
-}
 
 .tweet-list {
   list-style: none;
@@ -233,8 +232,7 @@ a {
 
 /* Right column*/
 .pic-col {
-  margin: 2px;
-  padding: 2px;
+  padding: 1px;
 }
 
 .right-col {
