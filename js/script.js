@@ -2,9 +2,10 @@ const tweets = []
 let isLike = false;
 
 const clickToAddTweet = () => {
-    const body = document.getElementById('tweet-input').value
+    const body = document.getElementById('tweet-input').value;
     const tweet = {
         body,
+        isReTweet: false,
         reTweets: 0,
         createdAt: new Date,
         isLike: false,
@@ -15,12 +16,7 @@ const clickToAddTweet = () => {
         return alert("You need to input something")
     }
     tweets.push(tweet)
-    let tweetsHTML = tweets.map((tweet, idx) => {
-        return `<li>${tweet.body} ${tweet.reTweets > 0 ? `----- has been retweeted by ${tweet.reTweets} times` : ''} ${tweet.likeCount}</li>
-        <button href="#" onclick="reTweet(${idx})">Retweet</button>
-        <button href="#" onclick="like(${idx})">${tweet.isLike === false ? "Like" : "Unlike"}</button>
-        <button href="#" onclick="del(${idx})">Del</button>`
-    })
+    tweetModified()
     document.getElementById('tweets').innerHTML = tweetsHTML.join('\n')
     document.getElementById('tweet-input').value = ''
     document.getElementById('promptCount').innerHTML = 140;
@@ -37,10 +33,20 @@ addInputEventListener()
 
 const reTweet = (idx) => {
     const tweet = tweets[idx]
-    tweet.reTweets = tweet.reTweets + 1
-    tweets[idx] = tweet
-    let tweetsHTML = tweets.map((tweet, idx) => {
-        return `<li>${tweet.body} ${tweet.reTweets > 0 ? `----- has been retweeted by ${tweet.reTweets} times` : ''}</li><button href="#" onclick="reTweet(${idx})">Retweet</button>`
+    let userInput = prompt("Input here");
+    tweet.isReTweet = !tweet.isReTweet;
+    if (!tweet.isReTweet) {
+        tweet.reTweets--
+    } else {
+        tweet.reTweets++
+    }
+    tweetsHTML = tweets.map((tweet, idx) => {
+        return `
+        <li>${userInput}</li>
+        <li>@ ${tweet.body}</li>
+        <button href="#" onclick="reTweet(${idx})">Retweet ${tweet.reTweets}</button>
+        <a onclick="like(${idx})">${tweet.isLike === false ? "❤" : "💓"}</a> ${tweet.likeCount}
+        <button href="#" onclick="del(${idx})">Del</button>`
     })
     document.getElementById('tweets').innerHTML = tweetsHTML.join('\n')
 }
@@ -53,22 +59,21 @@ const like = (idx) => {
     } else {
         tweet.likeCount++
     }
-    let tweetsHTML = tweets.map((tweet, idx) => {
-        return `<li>${tweet.body} ${tweet.reTweets > 0 ? `----- has been retweeted by ${tweet.reTweets} times` : ''} ${tweet.likeCount}</li>
-        <button href="#" onclick="reTweet(${idx})">Retweet</button>
-        <button href="#" onclick="like(${idx})">${tweet.isLike === false ? "Like" : "Unlike"}</button>
-        <button href="#" onclick="del(${idx})">Del</button>`
-    })
+    tweetModified()
     document.getElementById('tweets').innerHTML = tweetsHTML.join('\n')
 }
 
 const del = (idx) => {
     tweets.splice(idx, 1)
-    let tweetsHTML = tweets.map((tweet, idx) => {
-        return `<li>${tweet.body} ${tweet.reTweets > 0 ? `----- has been retweeted by ${tweet.reTweets} times` : ''} ${tweet.likeCount}</li>
-        <button href="#" onclick="reTweet(${idx})">Retweet</button>
-        <button href="#" onclick="like(${idx})">${tweet.isLike === false ? "Like" : "Unlike"}</button>
+    tweetModified()
+    document.getElementById('tweets').innerHTML = tweetsHTML.join('\n')
+}
+
+const tweetModified = () => {
+    tweetsHTML = tweets.map((tweet, idx) => {
+        return `<li>${tweet.body}</li>
+        <button href="#" onclick="reTweet(${idx})">Retweet ${tweet.reTweets}</button>
+        <a onclick="like(${idx})">${tweet.isLike === false ? "❤" : "💓"}</a> ${tweet.likeCount}
         <button href="#" onclick="del(${idx})">Del</button>`
     })
-    document.getElementById('tweets').innerHTML = tweetsHTML.join('\n')
 }
