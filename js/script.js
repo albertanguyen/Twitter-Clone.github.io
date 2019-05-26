@@ -163,8 +163,6 @@ const reTweet = (idx) => {
     const tweet = tweets[idx]
     tweet.reTweets ++
     tweets[idx] = tweet
-    // let add = TweetRender(tweets).reverse();
-    // TweetUserList().innerHTML = add;
 }
 
 
@@ -179,13 +177,6 @@ const like = (_, idx) => {
         tweet.likeCount++
     }
     TweetRender(tweets);
-    // let tweetsHTML = tweets.map((tweet, idx) => {
-    //     return `<li>${tweet.body} ${tweet.reTweets > 0 ? `----- has been retweeted by ${tweet.reTweets} times` : ''} ${tweet.likeCount}</li>
-    //     <button href="#" onclick="reTweet(${idx})">Retweet</button>
-    //     <button href="#" onclick="like(${idx})">${tweet.isLike === false ? "Like" : "Unlike"}</button>
-    //     <button href="#" onclick="del(${idx})">Del</button>`
-    // })
-    // document.getElementById('tweets').innerHTML = tweetsHTML.join('\n')
 }
 
 
