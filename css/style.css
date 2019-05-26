@@ -30,8 +30,7 @@ a {
 }
 .btn-search {
   background-color: #fff;
-  padding: 3px 8px;
-
+  padding: 6px 8px;
 }
 
 .navbar-search-icon {
@@ -72,17 +71,24 @@ a {
 .navbar-user-dropdown {
   margin-right: 15px;
 }
+
+.nav-md-size .octicon {
+  font-size: 20px;
+  padding-right: 15px;
+}
+
 /* END: Top Navbar elements' styles */
 
 .profile-background {
   height: 320px;
-  background-image: url("https://pbs.twimg.com/profile_banners/439335622/1496682615/1500x500");
+  background-image: url("../img/cover-photo.jpg");
+  margin: 0;
 }
 
 /* Main avatar */
 .avatar-container {
   bottom: -87px;
-  left: 100px;
+  left: 10px;
   position: absolute;
   transition: bottom 0.3s;
   z-index: 3;
@@ -96,6 +102,7 @@ a {
   border: 5px solid #fff;
   border-radius: 50%;
   height: 200px;
+  position: relative;
   width: 200px;
 }
 /* END: Main avatar */
@@ -182,8 +189,6 @@ a {
 /* END: Left column*/
 
 /* Main column*/
-.main-content {
-}
 
 .tweet-list {
   list-style: none;
@@ -227,8 +232,7 @@ a {
 
 /* Right column*/
 .pic-col {
-  margin: 2px;
-  padding: 2px;
+  padding: 1px;
 }
 
 .right-col {
