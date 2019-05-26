@@ -30,7 +30,8 @@ a {
 }
 .btn-search {
   background-color: #fff;
-  padding: 6px 8px;
+  padding: 3px 8px;
+
 }
 
 .navbar-search-icon {
@@ -83,12 +84,11 @@ a {
   height: 320px;
   background-image: url("../img/cover-photo.jpg");
   margin: 0;
-}
 
 /* Main avatar */
 .avatar-container {
   bottom: -87px;
-  left: 10px;
+  left: 100px;
   position: absolute;
   transition: bottom 0.3s;
   z-index: 3;
@@ -102,7 +102,6 @@ a {
   border: 5px solid #fff;
   border-radius: 50%;
   height: 200px;
-  position: relative;
   width: 200px;
 }
 /* END: Main avatar */

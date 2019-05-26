@@ -2,7 +2,7 @@
 
 Created with love by: <a href="https://github.com/albertanguyen">Anh Nguyen</a>, <a href="https://github.com/SteelHeart112">Harold</a>, <a href="https://github.com/huynhtehoa">Hoa Huynh</a> 
 
-View online at: 
+View online at: https://albertanguyen.github.io/Twitter-Clone.github.io/
 
 ## User Stories
 
@@ -22,9 +22,9 @@ THE USER is:
 * [ ] Able to delete a tweet. 
 
 Optional Stories 
-* [] The user can see a list of the 20 latest top news stories, loaded dynamically from newsapi.
-* [] For each story, the user sees a headline, the source, a link to more, and an image.
-* [] The user can see the total number of stories currently shown.
+* [ ] The user can see a list of the 20 latest top news stories, loaded dynamically from newsapi.
+* [ ] For each story, the user sees a headline, the source, a link to more, and an image.
+* [ ] The user can see the total number of stories currently shown.
 
 The following **optional** features are implemented:
 * [ ] Download and upload the list of tweets using the myjson api, as shown in class.
@@ -42,6 +42,7 @@ Time spent: X hours spent in total.
 [//]: #  (Describe any challenges encountered while building the app.)
 
 ## Version 1.0.1
+Modified twitter template with our own logo (for fun!)
 
 ## Version 1.0.0
 Inherite the <a href="https://github.com/jvadillo/twitter-bootstrap">Twitter bootstrap Clone</a> from <a href="https://github.com/jvadillo">Jon</a>
