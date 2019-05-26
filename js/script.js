@@ -103,12 +103,15 @@ const addInputEventListener = e => {
 const TweetRender = object => {
     let html = "";
     object.reverse().map((element, idx) => {
-        const htmlnode = `<li class="tweet-card">
+        if (element.body.length > 1) {
+                    const htmlnode = `<li class="tweet-card">
                     <div class="tweet-content">
                         <div class="tweet-header d-flex">
                             <span class="fullname"><strong>Royal Road</strong></span>
                             <span class="username">@RoyalRoad</span>
-                            <span class="tweet-time">- ${moment(element.createdAt).format("MMM Do")}</span>
+                            <span class="tweet-time">- ${moment(
+                              element.createdAt
+                            ).format("MMM Do")}</span>
                             <div class="dropdown d-inline-flex ml-auto">
                                 <button class="btn btn-secondary btn-small dropdown-toggle" type="button"
                                 id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true"
@@ -123,7 +126,9 @@ const TweetRender = object => {
                         </div>
                         <a><img class="tweet-card-avatar" src="img/avatar.png" alt=""></a>
                         <div class="tweet-text">
-                            <p class="" data-aria-label-part="0">${element.body} 
+                            <p class="" data-aria-label-part="0">${
+                              element.body
+                            } 
                                 <a href="" class="twitter-hashtag" dir="ltr"></a>
                             </p>
                     </div>
@@ -132,11 +137,18 @@ const TweetRender = object => {
                             <i class="octicon octicon-comment" aria-hidden="true" id="cmt-btn"></i><span>18</span>
                         </a>
                         <a class="tweet-footer-btn">
-                            <i class="octicon octicon-sync" aria-hidden="true" onclick="reTweet(${idx})" id="retweet-btn"></i><span>${element.reTweets > 0 ? `${element.reTweets}` : 0}</span>
+                            <i class="octicon octicon-sync" aria-hidden="true" onclick="reTweet(${idx})" id="retweet-btn"></i>
+                            <span>${
+                              element.reTweets > 0
+                                ? `${element.reTweets}`
+                                : 0
+                            }</span>
                         </a>
                         <a class="tweet-footer-btn">
-                            <i class="octicon octicon-heart" aria-hidden="true" id="like-btn"
-                                onclick="like(${idx})"></i><span id="likeNum">${element.likeCount}</span>
+                            <i class="octicon octicon-heart" aria-hidden="true" id="like-btn" onclick="like(${idx})"></i>
+                            <span id="likeNum">${
+                              element.likeCount
+                            }</span>
                         </a>
                         <a class="tweet-footer-btn">
                             <i class="octicon octicon-mail" aria-hidden="true" id="DM-btn"></i><span>
@@ -145,19 +157,26 @@ const TweetRender = object => {
                     </div>
                 </div>
             </li>`;
-        const jsnode = html += htmlnode;
+        const jsnode = (html += htmlnode);
         TweetUserList().innerHTML = jsnode;
-        // document.getElementById("tweet-input").value = "";
+        } else {
+            alert("Let tweet more than 2 characters. Words are unlimited.")
+        }
   });
 }
 
+const del = idx => {
+  tweets.splice(idx, 1);
+  tweethtml.innerHTML = "";
+  TweetRender(tweets);
+};
 
 const reTweet = (idx) => {
     const tweet = tweets[idx]
     tweet.reTweets ++
     tweets[idx] = tweet
-    // let add = TweetRender(tweets);
-    // TweetUserList().innerHTML = add.push(tweet.body);
+    // let add = TweetRender(tweets).reverse();
+    // TweetUserList().innerHTML = add;
 }
 
 
@@ -181,11 +200,6 @@ const like = (_, idx) => {
     // document.getElementById('tweets').innerHTML = tweetsHTML.join('\n')
 }
 
-const del = (idx) => {
-    tweets.splice(idx, 1)
-    tweethtml.innerHTML = '';
-    TweetRender(tweets);
-}
 
 
 getTechNews();
