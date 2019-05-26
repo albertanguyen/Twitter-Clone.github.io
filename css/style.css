@@ -191,18 +191,23 @@ a {
 /* Main column*/
 
 #tweet-input {
-  width: 75%; 
-  background-color:rgb(231, 227, 227);
-  height: 40px; 
+  width: 75%;
+  background-color: rgba(231, 227, 227, 0.363);
+  height: 40px;
   border-radius: 20px;
   font-size: 0.9rem;
-  border: none;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.062);
+  outline: none;
   padding-left: 10px;
+}
+#tweet-input:hover {
+  box-shadow: 0 0 11px;
 }
 
 #tweet-btn {
   margin-left: 1rem;
-  width:20%;
+  width: 20%;
 }
 
 .tweet-list {
@@ -296,3 +301,7 @@ a {
 /* END: Right column*/
 
 /* END: Main content elements' styles */
+
+#like-btn {
+  cursor: pointer;
+}

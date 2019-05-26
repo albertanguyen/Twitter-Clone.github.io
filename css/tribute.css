@@ -1,0 +1,38 @@
+/* Shamelessly copied from https://github.com/zurb/tribute */
+
+.tribute-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: auto;
+  max-height: 300px;
+  max-width: 500px;
+  overflow: auto;
+  display: block;
+  z-index: 999999;
+}
+.tribute-container ul {
+  margin: 0;
+  margin-top: 23px;
+  padding: 0;
+  border: 2px solid #4ab3f4;
+  list-style: none;
+  background: white;
+}
+.tribute-container li {
+  padding: 5px 5px;
+  cursor: pointer;
+}
+.tribute-container li.highlight {
+  background: #4ab3f4;
+  color: white;
+}
+.tribute-container li span {
+  font-weight: bold;
+}
+.tribute-container li.no-match {
+  cursor: default;
+}
+.tribute-container .menu-highlighted {
+  font-weight: bold;
+}
