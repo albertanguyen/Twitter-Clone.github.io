@@ -207,6 +207,12 @@
               <!-- End; Left column -->
               <!-- Center content column -->
               <div class="col-6">
+                    <input id="tweet-input" placeholder="What's happening?" maxLength="140">
+                    <div>
+                        Charatacter maining <span id="promptCount"></span>
+                    </div>
+                    <button onclick="clickToAddTweet()">Tweet</button>
+                    <ul id="tweets"></ul>
                   <ol class="tweet-list">
                       <li class="tweet-card">
                           <div class="tweet-content">
@@ -409,6 +415,7 @@
                           </div>
                       </li>
                   </ol>
+                </button>
                   <!-- End: tweet list -->
               </div>
               <!-- End: Center content column -->
