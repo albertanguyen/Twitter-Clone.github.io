@@ -27,14 +27,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
 
     <link rel="icon" href="img/twitter-logo.png" type="image/x-icon">
-    <title>Royal Road Twitter</title>
+    <title>Royal Road (@royalroad)</title>
 </head>
 
 <body>
     <!-- Fixed top navbar -->
     <nav class="navbar navbar-expand navbar-light bg-light fixed-top d-flex">
         <div class="container">
-
             <!-- Nav Normal Size -->
             <div class="mr-auto d-none d-none d-lg-block">
                 <!-- Navbar navigation links -->
@@ -208,14 +207,20 @@
                 </div>
                 <!-- End; Left column -->
                 <!-- Center content column -->
-                <div class="col-6">
-                    <ol class="tweet-list" id="TweetListhtml">
 
+              <div class="col-12 col-lg-6">
+                    <input id="tweet-input" placeholder="What's happening?" maxLength="140">
+                    <div>
+                        Charatacter maining <span id="promptCount"></span>
+                    </div>
+                    <button onclick="clickToAddTweet()">Tweet</button>
+                    <ul id="tweets"></ul>
+                    <ol class="tweet-list" id="TweetListhtml">
+                    
                     </ol>
-                    <!-- End: tweet list -->
-                </div>
-                <!-- End: Center content column -->
-                <div class="col right-col">
+              </div>
+              <!-- End: Center content column -->
+                <div class="col-lg right-col d-none d-lg-block">
                     <div class="content-panel">
                         <div class="panel-header">
                             <h4>Who to follow</h4><small><a href="">Refresh</a></small><small><a href="">View
@@ -236,7 +241,6 @@
                                             </span>
                                             <span class="username">@JonVadillo</span>
                                         </div>
-
                                         <button class="btn btn-follow">Follow</button>
                                     </div>
                                 </li>
@@ -290,7 +294,6 @@
 
         <!--Impor JS-->
         <script src="js/script.js"></script>
-
 </body>
 
 </html>
