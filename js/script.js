@@ -85,7 +85,7 @@ const clickToAddTweet = () => {
   if (/^\s*$/.test(body)) {
     return alert("It seems like you have not tweeted. Let's tweet!");
   }
-  tweets.push(tweet);
+  tweets.unshift(tweet);
   TweetRender(tweets);
   document.getElementById("tweet-input").value = "";
   document.getElementById("promptCount").innerHTML = 140;
@@ -102,35 +102,31 @@ const addInputEventListener = e => {
 
 const TweetRender = object => {
     let html = "";
-    object.reverse().map((element, idx) => {
-        if (element.body.length > 1) {
-                    const htmlnode = `<li class="tweet-card">
-                    <div class="tweet-content">
-                        <div class="tweet-header d-flex">
-                            <span class="fullname"><strong>Royal Road</strong></span>
-                            <span class="username">@RoyalRoad</span>
-                            <span class="tweet-time">- ${moment(
-                              element.createdAt
-                            ).format("MMM Do")}</span>
-                            <div class="dropdown d-inline-flex ml-auto">
-                                <button class="btn btn-secondary btn-small dropdown-toggle" type="button"
-                                id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true"
-                                aria-expanded="false" style="border:none; background-color: white; border-radius: 20px;"></button>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <button class="dropdown-item" type="button">View Tweet activity</button>
-                                    <button class="dropdown-item" type="button">Embed Tweet</button>
-                                    <button class="dropdown-item" type="button">Pin to profile</button>
-                                    <button class="dropdown-item text-danger" type="button" onclick="del(${idx})">Delete</button>
-                                </div>
+    object.map((element, idx) => {
+        const htmlnode = `
+            <li class="tweet-card">
+                <div class="tweet-content">
+                    <div class="tweet-header d-flex">
+                        <span class="fullname"><strong>Royal Road</strong></span>
+                        <span class="username">@RoyalRoad</span>
+                        <span class="tweet-time">- ${moment(element.createdAt).format("MMM Do")}</span>
+                        <div class="dropdown d-inline-flex ml-auto">
+                            <button class="btn btn-secondary btn-small dropdown-toggle" type="button"
+                            id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false" style="border:none; background-color: white; border-radius: 20px;"></button>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <button class="dropdown-item" type="button">View Tweet activity</button>
+                                <button class="dropdown-item" type="button">Embed Tweet</button>
+                                <button class="dropdown-item" type="button">Pin to profile</button>
+                                <button class="dropdown-item text-danger" type="button" onclick="del(${idx})">Delete</button>
                             </div>
                         </div>
-                        <a><img class="tweet-card-avatar" src="img/avatar.png" alt=""></a>
-                        <div class="tweet-text">
-                            <p class="" data-aria-label-part="0">${
-                              element.body
-                            } 
-                                <a href="" class="twitter-hashtag" dir="ltr"></a>
-                            </p>
+                    </div>
+                    <a><img class="tweet-card-avatar" src="img/avatar.png" alt=""></a>
+                    <div class="tweet-text">
+                        <p class="" data-aria-label-part="0">${element.body} 
+                            <a href="" class="twitter-hashtag" dir="ltr"></a>
+                        </p>
                     </div>
                     <div class="tweet-footer">
                         <a class="tweet-footer-btn">
@@ -138,17 +134,11 @@ const TweetRender = object => {
                         </a>
                         <a class="tweet-footer-btn">
                             <i class="octicon octicon-sync" aria-hidden="true" onclick="reTweet(${idx})" id="retweet-btn"></i>
-                            <span>${
-                              element.reTweets > 0
-                                ? `${element.reTweets}`
-                                : 0
-                            }</span>
+                            <span>${element.reTweets > 0 ? `${element.reTweets}` : 0}</span>
                         </a>
                         <a class="tweet-footer-btn">
                             <i class="octicon octicon-heart" aria-hidden="true" id="like-btn" onclick="like(${idx})"></i>
-                            <span id="likeNum">${
-                              element.likeCount
-                            }</span>
+                            <span id="likeNum">${element.likeCount}</span>
                         </a>
                         <a class="tweet-footer-btn">
                             <i class="octicon octicon-mail" aria-hidden="true" id="DM-btn"></i><span>
@@ -157,9 +147,9 @@ const TweetRender = object => {
                     </div>
                 </div>
             </li>`;
-        const jsnode = (html += htmlnode);
+        const jsnode = html += htmlnode;
         TweetUserList().innerHTML = jsnode;
-        }
+        // document.getElementById("tweet-input").value = "";
   });
 }
 
