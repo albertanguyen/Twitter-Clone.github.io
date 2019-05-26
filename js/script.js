@@ -1,4 +1,3 @@
-const likeBtn = document.getElementById("like-btn");
 const likeNumHtml = document.getElementById("likeNum");
 const TweetListhtml = () => document.getElementById("TweetListhtml");
 const TweetUserList = () => document.getElementById("tweets");
@@ -8,7 +7,7 @@ const tweets = [];
 
 const getTechNews = async () => {
   const url =
-    "https://newsapi.org/v2/top-headlines?sources=techradar&from=2019-05-20&to=2019-05-22&sortBy=popularity&apiKey=c8b325b75f2a418f902770811641994c";
+    "https://newsapi.org/v2/top-headlines?sources=techradar&from=2019-05-20&to=2019-05-25&sortBy=popularity&apiKey=c8b325b75f2a418f902770811641994c";
   const req = new Request(url);
   const res = await fetch(req);
   const { articles } = await res.json();
@@ -60,7 +59,7 @@ const renderTechNewsFeed = object => {
                         </a>
                         <a class="tweet-footer-btn">
                             <i class="octicon octicon-heart" aria-hidden="true" id="like-btn"
-                                onclick="likefeature()"></i><span id="likeNum"> 202</span>
+                                onclick="like(${idx})"></i><span id="likeNum"></span>
                         </a>
                         <a class="tweet-footer-btn">
                             <i class="octicon octicon-mail" aria-hidden="true" id="DM-btn"></i><span>
@@ -87,7 +86,7 @@ const clickToAddTweet = () => {
     return alert("It seems like you have not tweeted. Let's tweet!");
   }
   tweets.push(tweet);
-  TweetRender(tweets);
+  TweetRender(tweets).reverse();
   document.getElementById("tweet-input").value = "";
   document.getElementById("promptCount").innerHTML = 140;
 };
@@ -125,7 +124,6 @@ const TweetRender = object => {
                         <a><img class="tweet-card-avatar" src="img/avatar.png" alt=""></a>
                         <div class="tweet-text">
                             <p class="" data-aria-label-part="0">${element.body} 
-                            ${element.reTweets > 0 ? `----- has been retweeted by ${element.reTweets} times` : ''}
                                 <a href="" class="twitter-hashtag" dir="ltr"></a>
                             </p>
                     </div>
@@ -134,7 +132,7 @@ const TweetRender = object => {
                             <i class="octicon octicon-comment" aria-hidden="true" id="cmt-btn"></i><span>18</span>
                         </a>
                         <a class="tweet-footer-btn">
-                            <i class="octicon octicon-sync" aria-hidden="true" onclick="reTweet(${idx}) id="retweet-btn"></i><span>64</span>
+                            <i class="octicon octicon-sync" aria-hidden="true" onclick="reTweet(${idx}) id="retweet-btn"></i><span>${element.reTweets > 0 ? `${element.reTweets}` : 0}</span>
                         </a>
                         <a class="tweet-footer-btn">
                             <i class="octicon octicon-heart" aria-hidden="true" id="like-btn"
@@ -155,23 +153,25 @@ const TweetRender = object => {
 
 const reTweet = (idx) => {
     const tweet = tweets[idx]
-    tweet.reTweets = tweet.reTweets + 1
-    tweets[idx] = tweet
+    tweet.reTweets ++
+    // tweets[idx] = tweet
     TweetRender(tweets);
+    return 
     // let tweetsHTML = tweets.map((tweet, idx) => {
     //     return `<li>${tweet.body} ${tweet.reTweets > 0 ? `----- has been retweeted by ${tweet.reTweets} times` : ''}</li><button href="#" onclick="reTweet(${idx})">Retweet</button>`
     // })
-    // document.getElementById('tweets').innerHTML = tweetsHTML.join('\n')
+    document.getElementById('tweets').innerHTML = tweetsHTML.join('\n')
 }
 
 
-const like = (idx) => {
+const like = (_, idx) => {
     const tweet = tweets[idx]
     tweet.isLike = !tweet.isLike;
     if (!tweet.isLike) {
-        likeBtn.style.color = "red";
+        document.getElementById("like-btn").style.color = "red";
         tweet.likeCount--
     } else {
+        likeBtn.style.color = "gray";
         tweet.likeCount++
     }
     TweetRender(tweets);
@@ -186,15 +186,8 @@ const like = (idx) => {
 
 const del = (idx) => {
     tweets.splice(idx, 1)
+    tweethtml.innerHTML = '';
     TweetRender(tweets);
-
-    // let tweetsHTML = tweets.map((tweet, idx) => {
-    //     return `<li>${tweet.body} ${tweet.reTweets > 0 ? `----- has been retweeted by ${tweet.reTweets} times` : ''} ${tweet.likeCount}</li>
-    //     <button href="#" onclick="reTweet(${idx})">Retweet</button>
-    //     <button href="#" onclick="like(${idx})">${tweet.isLike === false ? "Like" : "Unlike"}</button>
-    //     <button href="#" onclick="del(${idx})">Del</button>`
-    // })
-    // document.getElementById('tweets').innerHTML = tweetsHTML.join('\n')
 }
 
 
