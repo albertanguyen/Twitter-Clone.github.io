@@ -10,11 +10,11 @@ The following **required** functionalities are completed:
 
 THE USER is:
 
-* [ ] Able to enter a message into a field box.
-* [ ] Able to press "Tweet" and see the message pop in below the text box.
-* [ ] Able to see a "count" that displays how many more characters the user has remaining. The character limit is 140 which is counted down after every character being written.
-* [ ] Able to see upon tweeting, the characters remaining text should reset back to 140, and the field is cleared.
-* [ ] Able to "retweet": Clicking Retweet immediately inserts a copy of that tweet below the original tweet.
+* [X] Able to enter a message into a field box.
+* [X] Able to press "Tweet" and see the message pop in below the text box.
+* [X] Able to see a "count" that displays how many more characters the user has remaining. The character limit is 140 which is counted down after every character being written.
+* [X] Able to see upon tweeting, the characters remaining text should reset back to 140, and the field is cleared.
+* [X] Able to "retweet": Clicking Retweet immediately inserts a copy of that tweet below the original tweet.
 * [ ] Able to "like" when a Heart icon is clicked, see the red color of the icon.
 * [ ] Able to "unlike" when a heart icon is clicked, see the icon change to uncolor within with border line only.
 * [ ] Not able to like a retweeted post.
