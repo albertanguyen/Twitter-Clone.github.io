@@ -41,7 +41,7 @@ const likefeature = () => {
 }
 
 
-const DeleteTweet = () => tweetcard.innerHTML = ''
+// const DeleteTweet = () => tweetcard.innerHTML = ''
 
 const getTechNews = async () => {
   const url =
@@ -63,17 +63,24 @@ const renderTechNewsFeed = object => {
                         <span class="fullname">
                             <strong>${element.author}</strong>
                         </span>
-                        <span class="username">@${element.author.replace(/\s/g,"")}</span>
-                        <span class="tweet-time">- ${moment(element.publishedAt).format("MMM Do")}</span>
+                        <span class="username">@${element.author.replace(
+                          /\s/g,
+                          ""
+                        )}</span>
+                        <span class="tweet-time">- ${moment(
+                          element.publishedAt
+                        ).format("MMM Do")}</span>
                         <div class="dropdown d-inline-flex ml-auto">
                             <button class="btn btn-secondary btn-small dropdown-toggle" type="button"
                                 id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true"
                                 aria-expanded="false" style="border:none; background-color: white; border-radius: 20px;"></button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                                <button class="dropdown-item" type="button">View Tweet activity</button>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <button class="dropdown-item" type="button">Show less often</button>
                                 <button class="dropdown-item" type="button">Embed Tweet</button>
-                                <button class="dropdown-item" type="button">Pin to Profile</button>
-                                <button class="dropdown-item text-danger" type="button" onclick="DeleteTweet()">Delete</button>
+                                <button class="dropdown-item" type="button">Unfollow @${element.author.replace(/\s/g,"")}</button>
+                                <button class="dropdown-item" type="button">Mute @${element.author.replace(/\s/g,"")}</button>
+                                <button class="dropdown-item" type="button">Block @${element.author.replace(/\s/g,"")}</button>
+                                <button class="dropdown-item text-danger" type="button" onclick="ReportTweet()">Report Tweet</button>
                             </div>
                         </div>
                     </div>
@@ -83,8 +90,12 @@ const renderTechNewsFeed = object => {
                             alt="">
                     </a>
                     <div class="tweet-text">
-                        <p class="" data-aria-label-part="0">${element.title}<br>${element.description}
-                        <a href="${element.url}" class="twitter-timeline-link"
+                        <p class="" data-aria-label-part="0">${
+                          element.title
+                        }<br>${element.description}
+                        <a href="${
+                          element.url
+                        }" class="twitter-timeline-link"
                                 target="_blank"><span class=""></span></a>
                             <a href="" class="twitter-hashtag"><s>#</s><b>firefox</b></a> <a href=""
                                 class="twitter-hashtag"><s>#</s><b>comunidad</b></a>
@@ -112,31 +123,7 @@ const renderTechNewsFeed = object => {
         const jsnode = (html += htmlnode);
         TweetListhtml().innerHTML = jsnode;
   });
-
-//   NumArticles(newsArticles);
 };
 
 getTechNews();
-
-// likeBtn.addEventListener("click", () => Countlike(), false);
-// likeBtn.addEventListener("click", () => UnCountlike(), true);
-
-// addEvent(likeBtn, "click", sayHello);
-// addEvent(likeBtn, "click", function() {
-//   alert("say hello again");
-// });
-// addEvent(likeBtn, "click", sayGoodMorning);
-
-// addEventListener(like, "click", function(event) {})
-
-// const likefunction = () => {
-//     like.style.color = "red";
-//     // let str = likeNum.values();
-//     // console.log(str);
-//     // document.write(str.fontcolor("blue"));
-// //    alert(str.fontcolor("blue"));
-
-// }
-
-
 
