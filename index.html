@@ -228,14 +228,17 @@
                 <!-- End; Left column -->
                 <!-- Center content column -->
               <div class="col-12 col-lg-6">
-                    <input id="tweet-input" placeholder="What's happening?" maxLength="140">
-                    <div>
-                        Charatacter maining <span id="promptCount"></span>
-                    </div>
-                    <button onclick="clickToAddTweet()">Tweet</button>
-                    <ul id="tweets"></ul>
                   <ol class="tweet-list">
-                      <li class="tweet-card">
+                      <li class="tweet-card"><strong>HOME</strong></li>
+                    <li class="tweet-card">
+                        <input type="text" id="tweet-input" placeholder="What's happening?" maxLength="140">
+                        <button class="btn btn-search-bar tweet-to-btn" onclick="clickToAddTweet()" id="tweet-btn">Tweet</button>
+                        <div class="text-left">
+                            Charatacter remaining <span id="promptCount"></span>
+                        </div>
+                        <ul id="tweets"></ul>
+                    </li>
+                    <li class="tweet-card">
                           <div class="tweet-content">
                               <div class="tweet-header">
                                   <span class="fullname">
