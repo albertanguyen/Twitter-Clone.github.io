@@ -15,11 +15,11 @@ THE USER is:
 * [X] Able to see a "count" that displays how many more characters the user has remaining. The character limit is 140 which is counted down after every character being written.
 * [X] Able to see upon tweeting, the characters remaining text should reset back to 140, and the field is cleared.
 * [X] Able to "retweet": Clicking Retweet immediately inserts a copy of that tweet below the original tweet.
-* [ ] Able to "like" when a Heart icon is clicked, see the red color of the icon.
-* [ ] Able to "unlike" when a heart icon is clicked, see the icon change to uncolor within with border line only.
+* [x] Able to "like" when a Heart icon is clicked, see the red color of the icon.
+* [x] Able to "unlike" when a heart icon is clicked, see the icon change to uncolor within with border line only.
 * [ ] Not able to like a retweeted post.
-* [ ] Able to do hashtags which is linked with an anchor tag
-* [ ] Able to delete a tweet. 
+* [x] Able to do hashtags which is linked with an anchor tag
+* [x] Able to delete a tweet. 
 
 The following **optional** features are implemented:
 * [ ] Download and upload the list of tweets using the myjson api, as shown in class.
