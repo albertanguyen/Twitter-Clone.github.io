@@ -1,6 +1,6 @@
 # CoderSchool FTW - * Mini-Twitter *
 
-Created with love by: <a href="https://github.com/albertanguyen">Anh Nguyen</a>, <a href="https://github.com/SteelHeart112">Harold</a>, <a href="https://github.com/huynhtehoa">Hoa Huynh</a> 
+Created with love by: <a href="https://github.com/albertanguyen">Anh Nguyen</a> (Dev), <a href="https://github.com/SteelHeart112">Harold</a> (Dev), <a href="https://github.com/huynhtehoa">Hoa Huynh</a> (Scrum Master & Product Owner) 
 
 View online at: https://albertanguyen.github.io/Twitter-Clone.github.io/
 
@@ -20,11 +20,6 @@ THE USER is:
 * [ ] Not able to like a retweeted post.
 * [x] Able to do hashtags which is linked with an anchor tag
 * [x] Able to delete a tweet. 
-
-Optional Stories 
-* [ ] The user can see a list of the 20 latest top news stories, loaded dynamically from newsapi.
-* [ ] For each story, the user sees a headline, the source, a link to more, and an image.
-* [ ] The user can see the total number of stories currently shown.
 
 The following **optional** features are implemented:
 * [ ] Download and upload the list of tweets using the myjson api, as shown in class.
