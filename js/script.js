@@ -86,7 +86,7 @@ const clickToAddTweet = () => {
     return alert("It seems like you have not tweeted. Let's tweet!");
   }
   tweets.push(tweet);
-  TweetRender(tweets).reverse();
+  TweetRender(tweets);
   document.getElementById("tweet-input").value = "";
   document.getElementById("promptCount").innerHTML = 140;
 };
@@ -102,7 +102,7 @@ const addInputEventListener = e => {
 
 const TweetRender = object => {
     let html = "";
-    object.map((element, idx) => {
+    object.reverse().map((element, idx) => {
         const htmlnode = `<li class="tweet-card">
                     <div class="tweet-content">
                         <div class="tweet-header d-flex">
@@ -132,7 +132,7 @@ const TweetRender = object => {
                             <i class="octicon octicon-comment" aria-hidden="true" id="cmt-btn"></i><span>18</span>
                         </a>
                         <a class="tweet-footer-btn">
-                            <i class="octicon octicon-sync" aria-hidden="true" onclick="reTweet(${idx}) id="retweet-btn"></i><span>${element.reTweets > 0 ? `${element.reTweets}` : 0}</span>
+                            <i class="octicon octicon-sync" aria-hidden="true" onclick="reTweet(${idx})" id="retweet-btn"></i><span>${element.reTweets > 0 ? `${element.reTweets}` : 0}</span>
                         </a>
                         <a class="tweet-footer-btn">
                             <i class="octicon octicon-heart" aria-hidden="true" id="like-btn"
@@ -147,6 +147,7 @@ const TweetRender = object => {
             </li>`;
         const jsnode = html += htmlnode;
         TweetUserList().innerHTML = jsnode;
+        // document.getElementById("tweet-input").value = "";
   });
 }
 
@@ -154,13 +155,9 @@ const TweetRender = object => {
 const reTweet = (idx) => {
     const tweet = tweets[idx]
     tweet.reTweets ++
-    // tweets[idx] = tweet
-    TweetRender(tweets);
-    return 
-    // let tweetsHTML = tweets.map((tweet, idx) => {
-    //     return `<li>${tweet.body} ${tweet.reTweets > 0 ? `----- has been retweeted by ${tweet.reTweets} times` : ''}</li><button href="#" onclick="reTweet(${idx})">Retweet</button>`
-    // })
-    document.getElementById('tweets').innerHTML = tweetsHTML.join('\n')
+    tweets[idx] = tweet
+    // let add = TweetRender(tweets);
+    // TweetUserList().innerHTML = add.push(tweet.body);
 }
 
 
