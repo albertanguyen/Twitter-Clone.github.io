@@ -13,8 +13,9 @@
 }
 .tribute-container ul {
   margin: 0;
-  margin-top: 9px;
+  margin-top: 23px;
   padding: 0;
+  border: 2px solid #4ab3f4;
   list-style: none;
   background: white;
 }
@@ -23,12 +24,11 @@
   cursor: pointer;
 }
 .tribute-container li.highlight {
-  background: #f2a900;
-  color: white
+  background: #4ab3f4;
+  color: white;
 }
 .tribute-container li span {
   font-weight: bold;
-  color: blue;
 }
 .tribute-container li.no-match {
   cursor: default;

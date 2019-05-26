@@ -1,6 +1,6 @@
 # CoderSchool FTW - * Mini-Twitter *
 
-Created with love by: <a href="https://github.com/albertanguyen">Anh Nguyen</a>, <a href="https://github.com/SteelHeart112">Harold</a>, <a href="https://github.com/huynhtehoa">Hoa Huynh</a> 
+Created with love by: <a href="https://github.com/albertanguyen">Anh Nguyen</a> (Dev), <a href="https://github.com/SteelHeart112">Harold</a> (Dev), <a href="https://github.com/huynhtehoa">Hoa Huynh</a> (Scrum Master & Product Owner) 
 
 View online at: https://albertanguyen.github.io/Twitter-Clone.github.io/
 
@@ -10,34 +10,31 @@ The following **required** functionalities are completed:
 
 THE USER is:
 
-* [X] Able to enter a message into a field box.
-* [X] Able to press "Tweet" and see the message pop in below the text box.
-* [X] Able to see a "count" that displays how many more characters the user has remaining. The character limit is 140 which is counted down after every character being written.
-* [X] Able to see upon tweeting, the characters remaining text should reset back to 140, and the field is cleared.
-* [X] Able to "retweet": Clicking Retweet immediately inserts a copy of that tweet below the original tweet.
-* [ ] Able to "like" when a Heart icon is clicked, see the red color of the icon.
-* [ ] Able to "unlike" when a heart icon is clicked, see the icon change to uncolor within with border line only.
+* [x] Able to enter a message into a field box.
+* [x] Able to press "Tweet" and see the message pop in below the text box.
+* [x] Able to see a "count" that displays how many more characters the user has remaining. The character limit is 140 which is counted down after every character being written.
+* [x] Able to see upon tweeting, the characters remaining text should reset back to 140, and the field is cleared.
+* [ ] Able to "retweet": Clicking Retweet immediately inserts a copy of that tweet below the original tweet.
+* [x] Able to "like" when a Heart icon is clicked, see the red color of the icon.
+* [x] Able to "unlike" when a heart icon is clicked, see the icon change to uncolor within with border line only.
 * [ ] Not able to like a retweeted post.
-* [ ] Able to do hashtags which is linked with an anchor tag
-* [ ] Able to delete a tweet. 
-
-Optional Stories 
-* [ ] The user can see a list of the 20 latest top news stories, loaded dynamically from newsapi.
-* [ ] For each story, the user sees a headline, the source, a link to more, and an image.
-* [ ] The user can see the total number of stories currently shown.
+* [x] Able to do hashtags which is linked with an anchor tag
+* [x] Able to delete a tweet. 
 
 The following **optional** features are implemented:
-* [ ] Download and upload the list of tweets using the myjson api, as shown in class.
-* [ ] Users can mention other users. Any string that starts with @username will be highlighted in blue.
+* [x] Download and upload the list of tweets using the myjson api, as shown in class.
+* [x] Users can mention other users. Any string that starts with @username will be highlighted in blue.
 * [ ] The user can click on a hashtag, and only other tweets with that hashtag are shown.
 * [ ] When the user deletes a tweet, all retweets should be deleted.
 * [ ] Any tweet with an image URL will have the image automatically expanded in the tweet.
 
 [//]: #  (The following **additional** features are implemented:)
+* [x] Responsive on different screen sizes
+* [x] Tweet profile update accordingly to number of tweets posted
 
 ## Time Spent and Lessons Learned
 
-Time spent: X hours spent in total.
+Time spent: 2 days spent in total.
 
 [//]: #  (Describe any challenges encountered while building the app.)
 

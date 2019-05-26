@@ -56,7 +56,7 @@
                         _ref$lookup = _ref.lookup,
                         lookup = _ref$lookup === undefined ? 'key' : _ref$lookup,
                         _ref$fillAttr = _ref.fillAttr,
-                        fillAttr = _ref$fillAttr === undefined ? 'key' : _ref$fillAttr,
+                        fillAttr = _ref$fillAttr === undefined ? 'value' : _ref$fillAttr,
                         _ref$collection = _ref.collection,
                         collection = _ref$collection === undefined ? null : _ref$collection,
                         _ref$menuContainer = _ref.menuContainer,
@@ -1835,6 +1835,12 @@
 var tribute = new Tribute({
     values: [
         { key: 'Katniss Everdeen', value: 'Kat_Catching_Fire' },
-        { key: 'Foxface', value: 'foxyweapons' }
+        { key: 'Foxface', value: 'foxyweapons' },
+        { key: 'Leon Huynh', value: 'huynhtehoa' },
+        { key: 'Jay Nguyen', value: 'anhnguyen' },
+        { key: 'Harold Nguyen', value: 'hieunguyen' },
+        { key: 'Matt Hanson', value: 'matthanson' },
+        { key: 'John McCann', value: 'johnmccann' },
+        { key: 'Tom Bedford', value: 'tombedford' }
     ]
 })

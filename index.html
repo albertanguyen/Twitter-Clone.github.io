@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="css/tribute.css" />
 
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+
     <link rel="icon" href="img/twitter-logo.png" type="image/x-icon">
     <title>Royal Road (@royalroad)</title>
 </head>
@@ -78,7 +80,7 @@
             </div>
             <!-- END: Navbar navigation links -->
             <!-- Navbar Search form -->
-            <div class="ml-auto d-none d-md-block">
+            <div class="ml-auto d-block">
                 <form class="navbar-form" role="search">
                     <div class="input-group">
                         <input type="text" class="form-control input-search" placeholder="Search Twitter"
@@ -106,8 +108,6 @@
                 </div>
             </div>
             <!-- END: Navbar User menu -->
-            <!-- Navbar Tweet button -->
-            <button class="btn btn-search-bar d-block">Tweet</button>
         </div>
         </div>
         </div>
@@ -136,7 +136,7 @@
                             <li class="profile-stats-item-active">
                                 <a>
                                     <span class="profile-stats-item profile-stats-item-label">Tweets</span>
-                                    <span class="profile-stats-item profile-stats-item-number">51</span>
+                                    <span id="tweet-count" class="profile-stats-item profile-stats-item-number">0</span>
                                 </a>
                             </li>
                             <li>
@@ -229,222 +229,28 @@
                 </div>
                 <!-- End; Left column -->
                 <!-- Center content column -->
+
                 <div class="col-12 col-lg-6">
-                    <input id="tweet-input" placeholder="What's happening?" maxLength="140">
-                    <div>
-                        Charatacter maining <span id="promptCount"></span>
-                    </div>
-                    <button onclick="clickToAddTweet()">Tweet</button>
-                    <ul id="tweets"></ul>
                     <ol class="tweet-list">
-                        <li class="tweet-card">
-                            <div class="tweet-content">
-                                <div class="tweet-header">
-                                    <span class="fullname">
-                                        <strong>Jon Vadillo</strong>
-                                    </span>
-                                    <span class="username">@JonVadillo</span>
-                                    <span class="tweet-time">- Jul 18</span>
-                                </div>
-                                <a>
-                                    <img class="tweet-card-avatar"
-                                        src="https://pbs.twimg.com/profile_images/679974972278849537/bzzb-6H4_bigger.jpg"
-                                        alt="">
-                                </a>
-                                <div class="tweet-text">
-                                    <p class="" lang="es" data-aria-label-part="0">¡Nuevo artículo en
-                                        Mozilla!<br>Resuelto: Corregido – Una breve historia sobre un error reportado
-                                        por la comunidad <a href="https://t.co/dqg5hVQXA0" class="twitter-timeline-link"
-                                            target="_blank"><span class="">https://www.mozilla-hispano.org/</span></a>
-                                        <a href="" class="twitter-hashtag"><s>#</s><b>firefox</b></a> <a href=""
-                                            class="twitter-hashtag"><s>#</s><b>comunidad</b></a>
-                                        <a href="" class="twitter-hashtag" dir="ltr"></a>
-                                    </p>
-                                </div>
-                                <div class="tweet-footer">
-                                    <a class="tweet-footer-btn">
-                                        <i class="octicon octicon-comment" aria-hidden="true"></i><span> 18</span>
-                                    </a>
-                                    <a class="tweet-footer-btn">
-                                        <i class="octicon octicon-sync" aria-hidden="true"></i><span> 64</span>
-                                    </a>
-                                    <a class="tweet-footer-btn">
-                                        <i class="octicon octicon-heart" aria-hidden="true"></i><span> 202</span>
-                                    </a>
-                                    <a class="tweet-footer-btn">
-                                        <i class="octicon octicon-mail" aria-hidden="true"></i><span> 155</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="tweet-card">
-                            <div class="tweet-content">
-                                <div class="tweet-header">
-                                    <span class="fullname">
-                                        <strong>Jon Vadillo</strong>
-                                    </span>
-                                    <span class="username">@JonVadillo</span>
-                                    <span class="tweet-time">- Jul 18</span>
-                                </div>
-                                <a>
-                                    <img class="tweet-card-avatar"
-                                        src="https://pbs.twimg.com/profile_images/679974972278849537/bzzb-6H4_bigger.jpg"
-                                        alt="">
-                                </a>
-                                <div class="tweet-text">
-                                    <p class="" lang="es" data-aria-label-part="0">¡Nuevo artículo en
-                                        Mozilla!<br>Resuelto: Corregido – Una breve historia sobre un error reportado
-                                        por la comunidad <a href="https://t.co/dqg5hVQXA0" class="twitter-timeline-link"
-                                            target="_blank"><span class="">https://www.mozilla-hispano.org/</span></a>
-                                        <a href="" class="twitter-hashtag"><s>#</s><b>firefox</b></a> <a href=""
-                                            class="twitter-hashtag"><s>#</s><b>comunidad</b></a>
-                                        <a href="" class="twitter-hashtag" dir="ltr"></a>
-                                    </p>
-                                </div>
-                                <div class="tweet-footer">
-                                    <a class="tweet-footer-btn">
-                                        <i class="octicon octicon-comment" aria-hidden="true"></i><span> 18</span>
-                                    </a>
-                                    <a class="tweet-footer-btn">
-                                        <i class="octicon octicon-sync" aria-hidden="true"></i><span> 64</span>
-                                    </a>
-                                    <a class="tweet-footer-btn">
-                                        <i class="octicon octicon-heart" aria-hidden="true"></i><span> 202</span>
-                                    </a>
-                                    <a class="tweet-footer-btn">
-                                        <i class="octicon octicon-mail" aria-hidden="true"></i><span> 155</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="tweet-card">
-                            <div class="tweet-content">
-                                <div class="tweet-header">
-                                    <span class="fullname">
-                                        <strong>Jon Vadillo</strong>
-                                    </span>
-                                    <span class="username">@JonVadillo</span>
-                                    <span class="tweet-time">- Jul 18</span>
-                                </div>
-                                <a>
-                                    <img class="tweet-card-avatar"
-                                        src="https://pbs.twimg.com/profile_images/679974972278849537/bzzb-6H4_bigger.jpg"
-                                        alt="">
-                                </a>
-                                <div class="tweet-text">
-                                    <p class="" lang="es" data-aria-label-part="0">¡Nuevo artículo en
-                                        Mozilla!<br>Resuelto: Corregido – Una breve historia sobre un error reportado
-                                        por la comunidad <a href="https://t.co/dqg5hVQXA0" class="twitter-timeline-link"
-                                            target="_blank"><span class="">https://www.mozilla-hispano.org/</span></a>
-                                        <a href="" class="twitter-hashtag"><s>#</s><b>firefox</b></a> <a href=""
-                                            class="twitter-hashtag"><s>#</s><b>comunidad</b></a>
-                                        <a href="" class="twitter-hashtag" dir="ltr"></a>
-                                    </p>
-                                </div>
-                                <div class="tweet-footer">
-                                    <a class="tweet-footer-btn">
-                                        <i class="octicon octicon-comment" aria-hidden="true"></i><span> 18</span>
-                                    </a>
-                                    <a class="tweet-footer-btn">
-                                        <i class="octicon octicon-sync" aria-hidden="true"></i><span> 64</span>
-                                    </a>
-                                    <a class="tweet-footer-btn">
-                                        <i class="octicon octicon-heart" aria-hidden="true"></i><span> 202</span>
-                                    </a>
-                                    <a class="tweet-footer-btn">
-                                        <i class="octicon octicon-mail" aria-hidden="true"></i><span> 155</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="tweet-card">
-                            <div class="tweet-content">
-                                <div class="tweet-header">
-                                    <span class="fullname">
-                                        <strong>Jon Vadillo</strong>
-                                    </span>
-                                    <span class="username">@JonVadillo</span>
-                                    <span class="tweet-time">- Jul 18</span>
-                                </div>
-                                <a>
-                                    <img class="tweet-card-avatar"
-                                        src="https://pbs.twimg.com/profile_images/679974972278849537/bzzb-6H4_bigger.jpg"
-                                        alt="">
-                                </a>
-                                <div class="tweet-text">
-                                    <p class="" lang="es" data-aria-label-part="0">¡Nuevo artículo en
-                                        Mozilla!<br>Resuelto: Corregido – Una breve historia sobre un error reportado
-                                        por la comunidad <a href="https://t.co/dqg5hVQXA0" class="twitter-timeline-link"
-                                            target="_blank"><span class="">https://www.mozilla-hispano.org/</span></a>
-                                        <a href="" class="twitter-hashtag"><s>#</s><b>firefox</b></a> <a href=""
-                                            class="twitter-hashtag"><s>#</s><b>comunidad</b></a>
-                                        <a href="" class="twitter-hashtag" dir="ltr"></a>
-                                    </p>
-                                </div>
-                                <div class="tweet-footer">
-                                    <a class="tweet-footer-btn">
-                                        <i class="octicon octicon-comment" aria-hidden="true"></i><span> 18</span>
-                                    </a>
-                                    <a class="tweet-footer-btn">
-                                        <i class="octicon octicon-sync" aria-hidden="true"></i><span> 64</span>
-                                    </a>
-                                    <a class="tweet-footer-btn">
-                                        <i class="octicon octicon-heart" aria-hidden="true"></i><span> 202</span>
-                                    </a>
-                                    <a class="tweet-footer-btn">
-                                        <i class="octicon octicon-mail" aria-hidden="true"></i><span> 155</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="tweet-card">
-                            <div class="tweet-content">
-                                <div class="tweet-header">
-                                    <span class="fullname">
-                                        <strong>Jon Vadillo</strong>
-                                    </span>
-                                    <span class="username">@JonVadillo</span>
-                                    <span class="tweet-time">- Jul 18</span>
-                                </div>
-                                <a>
-                                    <img class="tweet-card-avatar"
-                                        src="https://pbs.twimg.com/profile_images/679974972278849537/bzzb-6H4_bigger.jpg"
-                                        alt="">
-                                </a>
-                                <div class="tweet-text">
-                                    <p class="" lang="es" data-aria-label-part="0">¡Nuevo artículo en
-                                        Mozilla!<br>Resuelto: Corregido – Una breve historia sobre un error reportado
-                                        por la comunidad <a href="https://t.co/dqg5hVQXA0" class="twitter-timeline-link"
-                                            target="_blank"><span class="">https://www.mozilla-hispano.org/</span></a>
-                                        <a href="" class="twitter-hashtag"><s>#</s><b>firefox</b></a> <a href=""
-                                            class="twitter-hashtag"><s>#</s><b>comunidad</b></a>
-                                        <a href="" class="twitter-hashtag" dir="ltr"></a>
-                                    </p>
-                                </div>
-                                <div class="tweet-footer">
-                                    <a class="tweet-footer-btn">
-                                        <i class="octicon octicon-comment" aria-hidden="true"></i><span> 18</span>
-                                    </a>
-                                    <a class="tweet-footer-btn">
-                                        <i class="octicon octicon-sync" aria-hidden="true"></i><span> 64</span>
-                                    </a>
-                                    <a class="tweet-footer-btn">
-                                        <i class="octicon octicon-heart" aria-hidden="true"></i><span> 202</span>
-                                    </a>
-                                    <a class="tweet-footer-btn">
-                                        <i class="octicon octicon-mail" aria-hidden="true"></i><span> 155</span>
-                                    </a>
-                                </div>
-                            </div>
+                        <li class="tweet-card pt-3"><strong>HOME</strong></li>
+                        <li class="tweet-card mb-0">
+                            <div><img class="tweet-card-avatar ml-2" src="img/avatar.png" alt="">
+                            <input class="ml-3 mt-2" type="text" id="tweet-input" placeholder="What's happening?"
+                                maxLength="140"></div>
+                            <div style="padding-left: 80px;">Remaining characters: <span id="promptCount"></span></div>
+                            <div class="text-center"><button class="btn btn-search-bar tweet-to-btn" onclick="clickToAddTweet()"
+                                    id="tweet-btn">Tweet</button></div>
                         </li>
                     </ol>
+                    <ol class="tweet-list mt-0 mb-0" id="tweets"></ol>
+                    <ol class="tweet-list mt-0 mb-5" id="TweetListhtml"></ol>
                     <!-- End: tweet list -->
                 </div>
                 <!-- End: Center content column -->
                 <div class="col-lg right-col d-none d-lg-block">
                     <div class="content-panel">
                         <div class="panel-header">
-                            <h4>Who to follow</h4><small><a href="">Refresh</a></small><small><a href="">View
+                            <h4>Who to follow</h4><small><a href="">View
                                     all</a></small>
                         </div>
                         <!-- Who to Follow panel -->
@@ -453,26 +259,22 @@
                             <ol class="tweet-list">
                                 <li class="tweet-card">
                                     <div class="tweet-content">
-                                        <img class="tweet-card-avatar"
-                                            src="https://pbs.twimg.com/profile_images/679974972278849537/bzzb-6H4_bigger.jpg"
-                                            alt="">
+                                        <img class="tweet-card-avatar" src="img/avatar.png" alt="">
                                         <div class="tweet-header">
                                             <span class="fullname">
-                                                <strong>Jon Vadillo</strong>
+                                                <strong>Royal Road</strong>
                                             </span>
-                                            <span class="username">@JonVadillo</span>
+                                            <span class="username">@RoyalRoad</span>
                                         </div>
                                         <button class="btn btn-follow">Follow</button>
                                     </div>
                                 </li>
                                 <li class="tweet-card">
                                     <div class="tweet-content">
-                                        <img class="tweet-card-avatar"
-                                            src="https://pbs.twimg.com/profile_images/679974972278849537/bzzb-6H4_bigger.jpg"
-                                            alt="">
+                                        <img class="tweet-card-avatar" src="img/avatar.png" alt="">
                                         <div class="tweet-header">
                                             <span class="fullname">
-                                                <strong>Jon Vadillo</strong>
+                                                <strong>Royal Road</strong>
                                             </span>
                                             <span class="username">@JonVadillo</span>
                                         </div>
@@ -482,14 +284,12 @@
                                 </li>
                                 <li class="tweet-card">
                                     <div class="tweet-content">
-                                        <img class="tweet-card-avatar"
-                                            src="https://pbs.twimg.com/profile_images/679974972278849537/bzzb-6H4_bigger.jpg"
-                                            alt="">
+                                        <img class="tweet-card-avatar" src="img/avatar.png" alt="">
                                         <div class="tweet-header">
                                             <span class="fullname">
-                                                <strong>Jon Vadillo</strong>
+                                                <strong>Royal Road</strong>
                                             </span>
-                                            <span class="username">@JonVadillo</span>
+                                            <span class="username">@RoyalRoad</span>
                                         </div>
 
                                         <button class="btn btn-follow">Follow</button>
@@ -504,18 +304,18 @@
         </div>
         <!--Bootstrap script-->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+            </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+            </script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+            </script>
 
         <!--Import JS-->
         <script src="js/tribute.js"></script>
-        <script>tribute.attach(document.getElementById('tweet-input'));</script>
+        <script>tribute.attach(document.getElementById("tweet-input"));</script>
         <script src="js/script.js"></script>
 </body>
 
