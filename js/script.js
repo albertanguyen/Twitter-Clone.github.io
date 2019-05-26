@@ -159,8 +159,6 @@ const TweetRender = object => {
             </li>`;
         const jsnode = (html += htmlnode);
         TweetUserList().innerHTML = jsnode;
-        } else {
-            alert("Let tweet more than 2 characters. Words are unlimited.")
         }
   });
 }
