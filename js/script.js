@@ -1,3 +1,4 @@
+const likeBtn = document.getElementById("like-btn");
 const likeNumHtml = document.getElementById("likeNum");
 const TweetListhtml = () => document.getElementById("TweetListhtml");
 const TweetUserList = () => document.getElementById("tweets");
@@ -58,7 +59,7 @@ const renderTechNewsFeed = (object) => {
                         </a>
                         <a class="tweet-footer-btn">
                             <i class="octicon octicon-heart" aria-hidden="true" id="like-btn"
-                                onclick="like(${idx})"></i><span id="likeNum"></span>
+                                onclick="like()"></i><span id="likeNum"> 202</span>
                         </a>
                         <a class="tweet-footer-btn">
                             <i class="octicon octicon-mail" aria-hidden="true" id="DM-btn"></i><span>
@@ -143,7 +144,7 @@ const TweetRender = (object) => {
                             <i class="octicon octicon-sync" aria-hidden="true" onclick="reTweet(${idx})" id="retweet-btn"></i><span>${element.reTweets}</span>
                         </a>
                         <a class="tweet-footer-btn">
-                            <span id="like-btn" onclick="like(${idx})">${element.isLike === true ? "💖" : "❤"}</span><span id="likeNum">${element.likeCount}</span>
+                            <span id="like-btn" onclick="like(${idx})">${element.isLike === true ? "💙" : "❤"}</span><span id="likeNum">${element.likeCount}</span>
                         </a>
                         <a class="tweet-footer-btn">
                             <i class="octicon octicon-mail" aria-hidden="true" id="DM-btn"></i><span>
@@ -157,12 +158,6 @@ const TweetRender = (object) => {
     });
 }
 
-const del = idx => {
-  tweets.splice(idx, 1);
-  tweethtml.innerHTML = "";
-  TweetRender(tweets);
-};
-
 const reTweet = (idx) => {
     const tweet = tweets[idx]
     tweet.reTweets++
@@ -170,13 +165,12 @@ const reTweet = (idx) => {
 }
 
 
-const like = (_, idx) => {
+const like = (idx) => {
     const tweet = tweets[idx]
     tweet.isLike = !tweet.isLike;
     if (!tweet.isLike) {
         tweet.likeCount--
     } else {
-        likeBtn.style.color = "gray";
         tweet.likeCount++
     }
     TweetRender(tweets);
@@ -191,12 +185,12 @@ const del = (idx) => {
 }
 
 document.getElementById("tweet-input")
-    .addEventListener("keyup", function(event) {
-    event.preventDefault();
-    if (event.keyCode === 13) {
-        document.getElementById("tweet-btn").click();
-    }
-});
+    .addEventListener("keyup", function (event) {
+        event.preventDefault();
+        if (event.keyCode === 13) {
+            document.getElementById("tweet-btn").click();
+        }
+    });
 
 getTechNews();
 addInputEventListener();

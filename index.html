@@ -27,8 +27,6 @@
 
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
-    <link rel="stylesheet" href="tribute.css" />
-    <script src="js/tribute.js"></script>
 
     <link rel="icon" href="img/twitter-logo.png" type="image/x-icon">
     <title>Royal Road (@royalroad)</title>
@@ -237,11 +235,11 @@
                         <li class="tweet-card pt-3"><strong>HOME</strong></li>
                         <li class="tweet-card mb-0">
                             <div><img class="tweet-card-avatar ml-2" src="img/avatar.png" alt="">
-                            <input class="ml-3 mt-2" type="text" id="tweet-input" placeholder="What's happening?"
-                                maxLength="140"></div>
+                                <input class="ml-3 mt-2" type="text" id="tweet-input" placeholder="What's happening?"
+                                    maxLength="140"></div>
                             <div style="padding-left: 80px;">Remaining characters: <span id="promptCount"></span></div>
-                            <div class="text-center"><button class="btn btn-search-bar tweet-to-btn" onclick="clickToAddTweet()"
-                                    id="tweet-btn">Tweet</button></div>
+                            <div class="text-center"><button class="btn btn-search-bar tweet-to-btn"
+                                    onclick="clickToAddTweet()" id="tweet-btn">Tweet</button></div>
                         </li>
                     </ol>
                     <ol class="tweet-list mt-0 mb-0" id="tweets"></ol>

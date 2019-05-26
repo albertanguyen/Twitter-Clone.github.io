@@ -4,6 +4,9 @@ Created with love by: <a href="https://github.com/albertanguyen">Anh Nguyen</a> 
 
 View online at: https://albertanguyen.github.io/Twitter-Clone.github.io/
 
+## Gif Walkthrough
+![Gif](https://media.giphy.com/media/1vZ6Heczek71VcDDCm/giphy.gif)
+
 ## User Stories
 
 The following **required** functionalities are completed:
